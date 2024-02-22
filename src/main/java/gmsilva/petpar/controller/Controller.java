@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @GetMapping
-    public String batatao(){
+    public String pagina(){
         return "Página inicial do projeto.";
     }
 
