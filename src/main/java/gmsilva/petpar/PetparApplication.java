@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PetparApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(PetparApplication.class, args);
+
 	}
+
 
 }
