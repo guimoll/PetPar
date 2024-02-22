@@ -7,6 +7,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Table(name = "usuarios")
 @Entity(name = "Usuario")
 @Getter
@@ -14,11 +16,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Usuario {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
     private String cpf;
-    private String nascimento;
+    private LocalDate nascimento;
     private String email;
     private String telefone;
 
@@ -31,6 +33,7 @@ public class Usuario {
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.endereco = new Endereco(dados.endereco());
+        this.nascimento = dados.nascimento();
     }
 
 }
